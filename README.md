@@ -3,6 +3,9 @@
 Vue plugin built on [keen-tracking.js](https://github.com/keen/keen-tracking.js).
 
 ## Install
+```
+npm install vue-keen-tracking --save
+```
 
 ```
 import VueKeen from "vue-keen-tracking";
