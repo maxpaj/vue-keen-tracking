@@ -15,7 +15,9 @@ Vue.use(VueKeen, {
 
 You can then access the KeenTracking object through `this.$keen` in any of your components/views.
 
-### Extend event propertiers
+### Extend event properties
+
+[API reference](https://github.com/keen/keen-tracking.js/blob/master/docs/extend-events.md)
 
 ```
 const user = await fetchUser();
@@ -24,8 +26,12 @@ this.$keen.extendEvents({
 })
 ```
 
-### Track an event
+### Record an event
+
+[API reference](https://github.com/keen/keen-tracking.js/blob/master/docs/record-events.md)
 
 ```
-this.$keen.recordEvent("Logged in");
+this.$keen.recordEvent("purchases", {
+  item: "avocado"
+});
 ```

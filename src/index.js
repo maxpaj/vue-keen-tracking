@@ -2,10 +2,7 @@ import KeenTracking from "keen-tracking";
 
 function install(Vue, options) {
   const KeenHelpers = KeenTracking.helpers;
-  const Keen = new KeenTracking({
-    projectId: options.projectId,
-    writeKey: options.writeKey
-  });
+  const Keen = new KeenTracking(options);
 
   Keen.extendEvents(() => {
     return {
