@@ -5,6 +5,8 @@ Vue plugin for Keen.io integration.
 ## Install
 
 ```
+import VueKeen from "vue-keen-tracking";
+
 Vue.use(VueKeen, {
   projectId: "<KEEN_PROJECT_ID>",
   writeKey: "<KEEN_WRITE_KEY>"
