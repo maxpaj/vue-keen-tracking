@@ -17,6 +17,8 @@ Vue.use(VueKeen, keenOptions);
 
 You can then access the KeenTracking object through `this.$keen` in any of your components/views.
 
+## Use
+
 ### Extend event properties
 
 [API reference](https://github.com/keen/keen-tracking.js/blob/master/docs/extend-events.md)
