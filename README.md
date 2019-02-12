@@ -1,16 +1,18 @@
 # vue-keen-tracking
 
-Vue plugin for Keen.io integration.
+Vue plugin built on [keen-tracking.js](https://github.com/keen/keen-tracking.js).
 
 ## Install
 
 ```
 import VueKeen from "vue-keen-tracking";
 
-Vue.use(VueKeen, {
+const keenOptions = {
   projectId: "<KEEN_PROJECT_ID>",
   writeKey: "<KEEN_WRITE_KEY>"
-});
+};
+
+Vue.use(VueKeen, keenOptions);
 ```
 
 You can then access the KeenTracking object through `this.$keen` in any of your components/views.
