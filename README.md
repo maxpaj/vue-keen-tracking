@@ -1,4 +1,4 @@
-# vue-keen-tracking
+![npm badge](https://img.shields.io/npm/v/vue-keen-tracking.svg?style=flat)
 
 Vue plugin built on [keen-tracking.js](https://github.com/keen/keen-tracking.js).
 
