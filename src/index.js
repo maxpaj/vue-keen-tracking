@@ -4,6 +4,26 @@ function install(Vue, options) {
   const KeenHelpers = KeenTracking.helpers;
   const Keen = new KeenTracking(options);
 
+  if (options.debug) {
+    KeenTracking.debug = true;
+  }
+
+  if (options.autoTracking) {
+    Keen.initAutoTracking(options.autoTracking);
+  }
+
+  if (options.vuex && options.vuex.mutations) {
+    options.vuex.instance.subscribe((mutation, _) => {
+      Keen.recordEvent(mutation.type);
+    });
+  }
+
+  if (options.vuex && options.vuex.actions) {
+    options.vuex.instance.subscribeAction((action, _) => {
+      Keen.recordEvent(action.type);
+    });
+  }
+
   Keen.extendEvents(() => {
     return {
       page: {
