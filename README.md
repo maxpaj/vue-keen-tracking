@@ -3,6 +3,7 @@
 Vue plugin built on [keen-tracking.js](https://github.com/keen/keen-tracking.js).
 
 ## Install
+
 ```
 npm install vue-keen-tracking --save
 ```
@@ -20,7 +21,7 @@ Vue.use(VueKeen, keenOptions);
 
 You can then access the KeenTracking object through `this.$keen` in any of your components/views.
 
-You can add `autoTracking: true` to the config to add Keens auto-tracking.
+You can add `autoTracking: { ... }` to configure Keens [auto-tracking](https://github.com/keen/keen-tracking.js/blob/master/docs/auto-tracking.md).
 
 ### Vue-Router and Vuex
 
