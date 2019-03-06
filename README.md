@@ -21,7 +21,20 @@ Vue.use(VueKeen, options);
 
 You can then access the KeenTracking object through `this.$keen` in any of your components/views.
 
+### Auto tracking
+
 You can add `autoTracking: { ... }` to configure Keens [auto-tracking](https://github.com/keen/keen-tracking.js/blob/master/docs/auto-tracking.md).
+
+```
+const options = {
+  projectId: "<KEEN_PROJECT_ID>",
+  writeKey: "<KEEN_WRITE_KEY>",
+  autoTracking: { 
+    recordPageViews: true,
+    ...
+  }
+};
+```
 
 ### Vue-Router and Vuex
 
