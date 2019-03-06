@@ -2,7 +2,10 @@ import KeenTracking from "keen-tracking";
 
 function install(Vue, options) {
   const KeenHelpers = KeenTracking.helpers;
-  const Keen = new KeenTracking(options);
+  const Keen = new KeenTracking({
+    projectId: options.projectId,
+    writeKey: options.writeKey
+  });
 
   if (options.debug) {
     KeenTracking.debug = true;
@@ -12,14 +15,30 @@ function install(Vue, options) {
     Keen.initAutoTracking(options.autoTracking);
   }
 
-  if (options.vuex && options.vuex.mutations) {
-    options.vuex.instance.subscribe((mutation, _) => {
+  if (options.trackRoutes) {
+    if (typeof options.trackRoutes === "object") {
+      if (options.trackRoutes.onRouteChange) {
+        options.trackRoutes.router.afterEach(to => {
+          Keen.recordEvent(options.router(to));
+        });
+      } else {
+        options.trackRoutes.router.afterEach(to => {
+          Keen.recordEvent(`Navigate to ${to.name || to.path}`);
+        });
+      }
+    } else {
+      throw "Router configuration invalid";
+    }
+  }
+
+  if (options.trackVuex && options.trackVuex.mutations) {
+    options.trackVuex.store.subscribe(mutation => {
       Keen.recordEvent(mutation.type);
     });
   }
 
-  if (options.vuex && options.vuex.actions) {
-    options.vuex.instance.subscribeAction((action, _) => {
+  if (options.trackVuex && options.trackVuex.actions) {
+    options.trackVuex.store.subscribeAction(action => {
       Keen.recordEvent(action.type);
     });
   }
