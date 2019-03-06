@@ -56,9 +56,7 @@ const keenOptions = {
 
 ```
 const user = await fetchUser();
-this.\$keen.extendEvents({
-user
-})
+this.$keen.extendEvents({ user })
 ```
 
 ### Record an event
@@ -66,7 +64,7 @@ user
 [API reference](https://github.com/keen/keen-tracking.js/blob/master/docs/record-events.md)
 
 ```
-this.\$keen.recordEvent("purchases", {
+this.$keen.recordEvent("purchases", {
   item: "avocado"
 });
 ```
