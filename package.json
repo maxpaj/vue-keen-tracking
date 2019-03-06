@@ -1,6 +1,6 @@
 {
   "name": "vue-keen-tracking",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue plugin for Keen.io tracking",
   "main": "dist/index.js",
   "scripts": {
@@ -18,14 +18,42 @@
   ],
   "author": "maxpaj",
   "license": "ISC",
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
   "dependencies": {
     "keen-tracking": "^4.1.0"
   },
   "devDependencies": {
+    "vue": "^2.6.6",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "babel-loader": "^8.0.5",
+    "es6-promise": "^4.2.6",
     "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.5.21"
   }
 }
