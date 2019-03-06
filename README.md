@@ -11,12 +11,12 @@ npm install vue-keen-tracking --save
 ```
 import VueKeen from "vue-keen-tracking";
 
-const keenOptions = {
+const options = {
   projectId: "<KEEN_PROJECT_ID>",
   writeKey: "<KEEN_WRITE_KEY>"
 };
 
-Vue.use(VueKeen, keenOptions);
+Vue.use(VueKeen, options);
 ```
 
 You can then access the KeenTracking object through `this.$keen` in any of your components/views.
@@ -37,7 +37,7 @@ Vue.use(VueRouter);
 const router = require("./router");
 const store = require("./store");
 
-const keenOptions = {
+const options = {
   projectId: "<KEEN_PROJECT_ID>",
   writeKey: "<KEEN_WRITE_KEY>",
   trackRoutes: {
